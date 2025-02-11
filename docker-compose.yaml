@@ -19,9 +19,10 @@ services:
       - internal
 
   php:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    #build:
+      #context: .
+      #dockerfile: Dockerfile
+    image: vvveb/vvvebcms:latest
     environment:
       VVVEB_HOST: db
       VVVEB_PASSWORD: vvveb
@@ -33,7 +34,7 @@ services:
     volumes:
       - ./:/var/www/html/
     ports:
-      - "9090:80"
+      - "8080:80"
     links:
       - db
     depends_on:
